@@ -14,9 +14,9 @@ export default function xuxPage(page, ...mixins) {
         $store: store,
     // onStateChange () {},
         onShow(...args) {
-            console.log(store.main.items);
+          console.log(store.modules.get('main').getters);
             mobx.autorun(() => {
-                console.log(store.main.items);
+                console.log(store.modules.get('main').getters.total);
             });
             if (this.onStateChange) {
                 this.onStateChange = this.onStateChange.bind(this);
