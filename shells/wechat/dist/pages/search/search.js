@@ -1,4 +1,4 @@
-import xuxPage, {mapActions, mapState, mapMutations, mapGetters} from '../../utils/xuxPage';
+import xuxPage, {mapActions, mapState, mapMutations, mapFilters} from '../../utils/xuxPage';
 import {navigateTo} from '../../utils/util';
 import { objectAssign } from '../../logics/utils';
 
@@ -50,9 +50,9 @@ xuxPage({
     'search'
 ]), mapMutations('search', {
     initSearch: 'INIT'
-}), mapGetters('location', [
+}), mapFilters('location', [
     'getLocation'
-]), mapGetters('entityQueueStates', [
+]), mapFilters('entityQueueStates', [
     'isEntityRunning'
 ]), mapActions('entityQueueStates', [
     'fetchEntityQueueStates'

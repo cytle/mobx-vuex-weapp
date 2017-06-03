@@ -1,10 +1,10 @@
-import { objectAssign } from '../logics/utils';
+import { objectAssign, mobx } from '../logics/utils';
 const { store, componentHelper } = getApp();
 
 export const mapMutations = componentHelper.mapMutations;
 export const mapActions = componentHelper.mapActions;
 export const mapState = componentHelper.mapState;
-export const mapGetters = componentHelper.mapGetters;
+export const mapFilters = componentHelper.mapFilters;
 
 export default function xuxPage(page, ...mixins) {
     const pageOnHide = page.onHide;
@@ -14,6 +14,10 @@ export default function xuxPage(page, ...mixins) {
         $store: store,
     // onStateChange () {},
         onShow(...args) {
+            console.log(store.main.items);
+            mobx.autorun(() => {
+                console.log(store.main.items);
+            });
             if (this.onStateChange) {
                 this.onStateChange = this.onStateChange.bind(this);
                 store.subscribe(this.onStateChange);

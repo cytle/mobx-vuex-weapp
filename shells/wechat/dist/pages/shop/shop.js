@@ -1,4 +1,4 @@
-import xuxPage, { mapActions, mapGetters, mapState } from '../../utils/xuxPage';
+import xuxPage, { mapActions, mapFilters, mapState } from '../../utils/xuxPage';
 import { navigateTo } from '../../utils/util';
 
 xuxPage({
@@ -61,12 +61,12 @@ xuxPage({
 }, mapActions('shops', [
     'findShopSeatTypes',
     'findShop'
-]), mapGetters('shops', [
+]), mapFilters('shops', [
     'getShopByEntityId',
-]), mapGetters('tickets', [
+]), mapFilters('tickets', [
     'findQueuingTicketByEntityId',
 ]), mapActions('entityQueueStates', [
     'fetchEntityQueueStateByEntityId'
-]), mapGetters('entityQueueStates', [
+]), mapFilters('entityQueueStates', [
     'isEntityRunning'
 ]));

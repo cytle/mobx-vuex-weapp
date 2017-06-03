@@ -1,6 +1,7 @@
-import xuxPage, {mapActions, mapState, mapGetters} from '../../utils/xuxPage';
+import xuxPage, {mapActions, mapState, mapFilters} from '../../utils/xuxPage';
 import {navigateTo, log, delayShowLoading, cancleDelayShowLoading} from '../../utils/util';
 import getEntityIdFromQrCode from '../../utils/getEntityIdFromQrCode';
+
 //
 let fetchTicketsTimeoutIndex = null;
 
@@ -106,10 +107,10 @@ xuxPage({
     'refresOnlyhWhenLoactionChange'
 ]), mapActions('tickets', [
     'fetchTickets'
-]), mapGetters('location', [
+]), mapFilters('location', [
     'getLocation'
 ]), mapActions('entityQueueStates', [
     'fetchEntityQueueStates'
-]), mapGetters('entityQueueStates', [
+]), mapFilters('entityQueueStates', [
     'isEntityRunning'
 ]));

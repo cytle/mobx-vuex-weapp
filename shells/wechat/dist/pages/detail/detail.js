@@ -1,5 +1,5 @@
 import { delayShowLoading, cancleDelayShowLoading } from '../../utils/util';
-import xuxPage, {mapActions, mapGetters} from '../../utils/xuxPage';
+import xuxPage, {mapActions, mapFilters} from '../../utils/xuxPage';
 
 // 分别对应：排队中；用餐中；已过号；客户已取消；商家已取消
 const queueStatusNames = {
@@ -57,8 +57,7 @@ xuxPage({
     'cancelQueue',
     'fetchTickets'
 ])
-, mapGetters('tickets', [
+, mapFilters('tickets', [
     'getTicketsByQueueId'
 ])
 );
-
