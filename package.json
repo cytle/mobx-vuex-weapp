@@ -1,0 +1,41 @@
+{
+	"name": "oooo",
+	"version": "1.0.0",
+	"description": "微信火排队",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint src shells --ext=js",
+		"wept:wechat": "wept shells/wechat/dist",
+		"dev": "cd shells/wechat && webpack --watch --hide-modules",
+		"build": "cd shells/wechat && cross-env NODE_ENV=production webpack --progress --hide-modules"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@git.2dfire-inc.com:chaofan/queue.git"
+	},
+	"author": "火小二前端团队",
+	"license": "ISC",
+	"devDependencies": {
+		"babel": "^6.23.0",
+		"babel-core": "^6.24.0",
+		"babel-loader": "^6.4.1",
+		"babel-preset-env": "^1.2.2",
+		"babel-preset-es2015": "^6.24.0",
+		"babel-preset-stage-0": "^6.22.0",
+		"copy-webpack-plugin": "^4.0.1",
+		"cross-env": "^3.2.4",
+		"debug": "^2.6.3",
+		"eslint": "^3.17.1",
+		"eslint-config-airbnb": "^14.1.0",
+		"eslint-import-resolver-webpack": "^0.8.1",
+		"eslint-plugin-import": "^2.2.0",
+		"eslint-plugin-jsx-a11y": "^4.0.0",
+		"eslint-plugin-react": "^6.10.0",
+		"events": "^1.1.1",
+		"object-assign": "^4.1.1",
+		"promise": "^7.1.1",
+		"webpack": "^2.3.0",
+		"wept": "^0.9.1"
+	}
+}

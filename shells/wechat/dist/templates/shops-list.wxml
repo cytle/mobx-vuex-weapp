@@ -1,0 +1,52 @@
+<template name="shops-list">
+    <view
+        class="shops-list-item"
+        bindtap="goShop"
+        wx:for="{{shops}}"
+        wx:for-item="shop"
+        wx:key="{{shop.entity.entityId}}"
+        data-id="{{shop.entity.entityId}}"
+    >
+        <view class="shops-list-item-left">
+            <image src="{{shop.entity.logoUrl || '../../img/default-small.png'}}" class="tickets-item-left__image"/>
+        </view>
+        <view class="shops-list-item-center">
+            <view class="shops-list-item-center__name">
+                <text>{{shop.entity.name}}</text>
+            </view>
+            <view class="shops-list-item-center__detail" hidden="{{ !shop.entity.address }}">
+                <text>地址: {{shop.entity.address}}</text>
+            </view>
+
+            <!--<view class="shops-list-item-center__detail">
+                <text>距离：{{shop.entity.meterDistance}}m</text>
+            </view>-->
+
+        </view>
+        <view class="shops-list-item-right">
+            <view class="shops-list-item-right__badge shops-list-item-right__badge--sub" hidden="{{ !!shop.isRunning }}">
+                到店取号
+            </view>
+            <view class="shops-list-item-right__badge" hidden="{{ !shop.isRunning }}">
+                立即取号
+            </view>
+        </view>
+    </view>
+
+    <view
+        class="shops-list-no-more"
+        wx:if="{{loading}}"
+        style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content:center"
+    >
+        <icon type="waiting" color="grey" size="20" />
+        <text style="margin-left: 10rpx">加载中</text>
+    </view>
+    <view
+        class="shops-list-no-more"
+        wx:elif="{{noMore}}"
+        style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content:center"
+    >
+        <icon type="info" size="20" />
+        <text style="margin-left: 10rpx">没有更多了</text>
+    </view>
+</template>

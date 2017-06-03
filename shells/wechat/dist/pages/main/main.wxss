@@ -1,0 +1,128 @@
+/* pages/main/main.wxss */
+.view-container {
+  width: 100%;
+  padding-bottom: 100rpx;
+}
+
+.main-bg {
+  background-color: #D2042B;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  height: 454rpx;
+}
+
+.main-bg-cry {
+  width: 100%;
+  position: fixed;
+  top: 454rpx;
+  z-index: -1;
+  padding: 10rpx;
+  color: #b4b4b4;
+  text-align: center;
+}
+
+.main-header {
+  background-color: #D2042B;
+  width: 100%;
+  padding: 80rpx 0rpx 40rpx;
+}
+.main-header-logo {
+  display: block;
+  text-align: center;
+  margin-bottom: 52rpx;
+}
+
+.main-header-logo__image {
+  margin: 0rpx auto 20rpx;
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  /*background-color: #FFF;*/
+}
+
+.main-header-logo__text {
+  color: #FFF;
+  font-size: 32rpx;
+}
+
+.section {
+  background-color: #FFF;
+  padding-bottom: 1rpx;
+  width: 100%;
+}
+.section-title {
+  font-size: 30rpx;
+  padding: 16rpx 30rpx;
+
+}
+
+.tickets-container {
+  background-color: #ffffff;
+}
+
+.tickets-item {
+  margin-bottom: 8rpx;
+  padding: 20rpx 30rpx;
+  height: 130rpx;
+  background-color: #F9F9F9;
+}
+.tickets-item-left {
+  width: 460rpx;
+  margin-right: 30rpx;
+}
+
+.tickets-item-left__name {
+  display: block;
+  height: 48rpx;
+  font-size: 34rpx;
+  color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.tickets-item-left__info {
+  font-size: 24rpx;
+  color: #777;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tickets-item-left__number {
+  color: #CA683B;
+  font-weight: bold;
+  font-size: 32rpx;
+  margin: 0 8rpx;
+}
+
+.tickets-item-right {
+  width: 220rpx;
+  padding: 25rpx 25rpx 30rpx;
+  border-left: 4rpx solid #EFEFEF;
+}
+.tickets-item-right__text {
+  font-size: 48rpx;
+  color: #333;
+  line-height: 50rpx;
+  font-weight: bold;
+}
+
+.tickets-item-right__arrow {
+  position: relative;
+  top: -34rpx;
+}
+
+.placeholder{
+    margin: 5px;
+    padding: 0 10px;
+    text-align: center;
+    background-color: #EBEBEB;
+    height: 2.3em;
+    line-height: 2.3em;
+    color: #cfcfcf;
+}
+
+.weui-footer_fixed-bottom {
+  z-index: -1;
+}

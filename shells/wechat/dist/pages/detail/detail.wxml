@@ -1,0 +1,51 @@
+<view class="container" hidden="{{ !queueDetail.queueId }}">
+    <view wx:if="{{1==queueDetail.queueStatus}}">
+        <div class="welcome-1">欢迎光临</div>
+        <div bindtap="showModal" class="cancel">取消排队</div>
+    </view>
+    <view wx:if="{{1!=queueDetail.queueStatus}}">
+        <div class="welcome">欢迎光临</div>
+    </view>
+    <view class="image-view">
+        <image class="img" src="{{ statusImg }}"></image>
+    </view>
+    <view class="name-view">
+        <text class="name" bindtap="cancel">{{queueDetail.shopName}}</text>
+    </view>
+    <view class="take-time">{{queueDetail.takeNoTime}}领取</view>
+    <view class="code-view">
+        第<text class="code">{{queueDetail.queueNo}}</text>号
+    </view>
+
+    <view class="seat-type" wx:if="{{queueDetail.entitySeatInfo.max < 0}}">
+        {{queueDetail.entitySeatInfo.seatTypeName}}({{queueDetail.entitySeatInfo.min}}人以上)
+    </view>
+    <view class="seat-type" wx:if="{{queueDetail.entitySeatInfo.max >= 0}}">
+        {{queueDetail.entitySeatInfo.seatTypeName}}
+        ({{queueDetail.entitySeatInfo.min}} - {{queueDetail.entitySeatInfo.max}}人)
+    </view>
+
+    <view wx:if="{{1==queueDetail.queueStatus}}" class="waiting-num-view">
+        您之前还有
+        <text class="waiting-num">{{queueDetail.entitySeatInfo.queueLen}}</text>
+        桌客人在等待
+    </view>
+
+    <view wx:if="{{1!=queueDetail.queueStatus}}" class="waiting-num-view">
+        <text class="waiting-num">{{queueDetail.status}}</text>
+    </view>
+
+    <view class="tel">
+        <div class="tel-l">取号手机：{{queueDetail.takeNoPhone}}</div>
+        <div class="tel-r">用餐人数：{{queueDetail.customerNum}}人</div>
+    </view>
+    <view class="address">店家地址： {{queueDetail.entityAddress}}</view>
+    <view class="shop-tel">店家电话： {{queueDetail.entityPhone}}</view>
+    <view class="tip-t">温馨提示：</view>
+    <view class="tip-b">{{queueDetail.tips}}</view>
+</view>
+
+<view>
+    <modal title="确认要取消吗？" hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消"
+           bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel"></modal>
+</view>

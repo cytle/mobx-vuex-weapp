@@ -1,0 +1,37 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="avatar">
+                    <image class="avatar__img" hidden="{{!userInfo.avatarUrl}}" src="{{ userInfo.avatarUrl }}"></image>
+                </view>
+                <view class="mine-hd-info">
+                    <view class="mine-hd-info__name">{{ userInfo.nickName || '' }}</view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <image src="../../img/mobile_phone.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">手机号</view>
+                <view class="weui-cell__ft">{{ mobilePhone }}</view>
+            </view>
+            <view class="weui-cell" bindtap="callCustomerService">
+                <view class="weui-cell__hd">
+                    <image src="../../img/contact.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">联系我们</view>
+                <view class="weui-cell__ft">{{ customerServicePhone }}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <image src="../../img/stack.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">软件版本</view>
+                <view class="weui-cell__ft">0.0.2</view>
+            </view>
+        </view>
+    </view>
+</view>

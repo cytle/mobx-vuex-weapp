@@ -1,0 +1,10 @@
+{
+	"port": 1020,
+	"proxy": {
+		"host": "http://x.me/queue/api",
+		"port": 80,
+		"headers": {
+			"User-Agent": "Node"
+		}
+	}
+}

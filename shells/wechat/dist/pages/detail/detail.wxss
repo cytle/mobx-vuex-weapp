@@ -1,0 +1,134 @@
+/* pages/detail/detail.wxss */
+.container {
+  padding: 5px 0px;
+  background-color: white; /*#F2f2f2;*/
+}
+
+.welcome-1 {
+  padding-left: 60px;
+  font-size: 10pt;
+  color: grey;
+}
+
+.image-view {
+  width: 160rpx;
+  height: 160rpx;
+  position: fixed;
+  top: 136rpx;
+  right: 60rpx;
+}
+.image-view .img {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.welcome {
+  font-size: 10pt;
+  color: grey;
+}
+
+.cancel {
+  padding-left: 50px;
+  font-size: 10pt;
+  color: red;
+  text-decoration: underline;
+}
+
+.name-view {
+  border-bottom: 1px solid #E6E6E6;
+  width: 90%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.name {
+  font-size: 20pt;
+  margin-top: 30px;
+}
+
+.take-time {
+  margin-top: 10px;
+  color: grey;
+  font-size: 10pt;
+}
+
+.code-view {
+  margin-top: 10px;
+}
+
+.code {
+  font-size: 50pt;
+  font-weight: bold;
+  margin: 15px;
+
+}
+
+.seat-type {
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+.waiting-num-view {
+  font-size: 11pt;
+  margin: 15px;
+  color: red;
+  border-bottom: 1px solid #E6E6E6;
+  width: 90%;
+  text-align: center;
+  padding-bottom: 15px;
+
+}
+
+.waiting-num {
+  font-size: 20pt;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.tel {
+  font-size: 9pt;
+  width: 90%;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.tel-l {
+  float: left;
+}
+
+.tel-r {
+  float: right;
+}
+
+.address {
+  margin-top: 15px;
+  font-size: 9pt;
+  color: grey;
+  width: 90%;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.shop-tel {
+  margin-top: 15px;
+  font-size: 9pt;
+  color: grey;
+  width: 90%;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #E6E6E6;
+}
+
+.tip-t {
+  margin-top: 10px;
+  font-size: 9pt;
+  color: grey;
+  width: 90%;
+}
+
+.tip-b {
+  margin-top: 5px;
+  font-size: 9pt;
+  color: grey;
+  width: 90%;
+}
+

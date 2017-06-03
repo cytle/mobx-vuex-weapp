@@ -1,0 +1,125 @@
+/* pages/main/main.wxss */
+
+.shop-header {
+  background-color: #FFF;
+}
+
+.shop-header-logo {
+  position: relative;
+  margin-right: 16rpx;
+}
+
+
+.shop-header-logo__img {
+  position: relative;
+  margin-right: 16rpx;
+  width: 150rpx; height: 150rpx;
+  display: block;
+  background-color: #CCC;
+}
+.shop-header-name {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+  color: #555;
+}
+.shop-header-info {
+  font-size: 24rpx;color: #888888;
+}
+
+.schedule {
+  background-color: #FFF;
+  border: 0 solid #F5F5F5;
+  border-width: 2rpx 0;
+  padding: 0 20rpx;
+}
+.schedule-hd {
+  padding: 10rpx 0;
+  font-size: 24rpx;
+  border-bottom: 2rpx solid #F5F5F5;
+}
+.schedule-hd__col {
+  color: #777;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+.schedule-hd__col--left {
+  text-align: center;
+}
+.schedule-hd__col--center {
+  text-align: center;
+}
+.schedule-hd__col--right {
+  text-align: center;
+}
+
+.schedule-item {
+  color: #333;
+  font-size: 28rpx;
+  height: 100rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.schedule-item__col--left {
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 28rpx;
+}
+.schedule-item__col--left .small-text {
+  display: block;
+  color: #777;
+  font-size: 24rpx;
+}
+.schedule-item__col--center {
+  vertical-align: middle;
+  line-height: 80rpx;
+  text-align: center;
+}
+.schedule-item__col--center .primary-text {
+  text-align: right;
+  color: #B71D32;
+  margin-right: 10rpx;
+}
+.schedule-item__col--right {
+  line-height: 80rpx;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.schedule-ft {
+  color: #333;
+  font-size: 28rpx;
+  height: 180rpx;
+  padding: 10rpx;
+  border-bottom: 2rpx solid #F5F5F5;
+  box-sizing: border-box;
+}
+
+.schedule-ft__left {
+
+}
+
+.schedule-after {
+  padding: 40rpx 30rpx;
+  text-align: center;
+}
+
+.schedule-after__btn {
+  margin-top: 0 !important;
+}
+
+
+.shop-tag {
+  margin-right: 10rpx;
+  display:inline-block;
+  padding:.15em .4em;
+  min-width:8px;
+  border-radius:18px;
+  background-color:#E64340;
+  color:#FFFFFF;
+  line-height:1.2;
+  text-align:center;
+  font-size:12px;
+  vertical-align:middle;
+
+}

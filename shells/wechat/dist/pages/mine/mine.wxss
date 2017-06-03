@@ -1,0 +1,30 @@
+/* pages/history/history.wxss */
+
+.avatar {
+    margin: 10rpx;
+    background-color: #eee;
+    border-radius: 50%;
+    width: 110rpx;
+    height: 110rpx;
+}
+.avatar__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.mine-hd-info__name {
+  font-size: 32rpx;
+}
+.mine-hd-info__mobile_phone {
+  color: #888;
+  font-size: 24rpx;
+}
+/*.weui-cell__ft {
+  text-align: left;
+  color: #999999;
+}
+.weui-cell__bd__right {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+}*/

@@ -1,0 +1,61 @@
+<import src="../../templates/shops-list.wxml"/>
+
+<!--pages/main/main.wxml-->
+<view class="main-bg"></view>
+<view class="main-bg-cry" wx:if="{{tickets.length > 0 || shop.length > 0}}">
+    这下好了,被你拉断了~
+</view>
+<view class="view-container">
+    <view class="main-header">
+        <!-- <image class="main-header__logo" src="" /> -->
+        <view class="main-header-logo" bindtap="scanCode">
+            <image class="main-header-logo__image" src="../../img/scan_qr_code.png" />
+            <text class="main-header-logo__text">点击扫码取号</text>
+        </view>
+        <view class="weui-search-bar__form" style="margin: 0 26rpx;">
+            <view class="weui-search-bar__box" bindtap="goSearch">
+                <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                <view class="weui-search-bar__input" >搜索附近可排队的商家</view>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{tickets.length > 0}}">
+        <view class="section-title">我的排队单</view>
+        <view class="weui-flex tickets-item" wx:for="{{tickets}}" wx:for-item="ticket" wx:key="{{ticket.queueNo}}"
+              data-id="{{ticket.queueId}}" bindtap="goCheckQueue">
+            <view class="weui-flex__item tickets-item-left">
+                <view class="tickets-item-left__name">
+                    <text>{{ticket.entityName}}</text>
+                </view>
+                <view class="tickets-item-left__info">
+                    <block wx:if="{{ticket.queueStatus === 1}}">
+                        还需等待
+                        <text class="tickets-item-left__number">{{ticket.entitySeatInfo.queueLen}}</text>
+                        桌, 预计
+                        <text class="tickets-item-left__number">{{ticket.entitySeatInfo.waitingTime || '--'}}</text>
+                        分钟
+                    </block>
+                    <block wx:else>
+                        {{ticket.queueStatusText}}
+                    </block>
+                </view>
+            </view>
+            <view class="tickets-item-right">
+                <text class="tickets-item-right__text">{{ticket.queueNo}}</text>
+                <view class="weui-cell__ft weui-cell__ft_in-access tickets-item-right__arrow"></view>
+            </view>
+        </view>
+    </view>
+    <view class="section" wx:if="{{shops.length > 0}}">
+        <view class="section-title">附近可排队的店</view>
+
+        <template is="shops-list" data="{{shops: shops, noMore: noMore, loading: loading}}"/>
+    </view>
+</view>
+<view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__text">二维火提供技术支持 4000-288-255</view>
+</view>
+
+<view>
+    <loading hidden="{{!loading}}">加载中...</loading>
+</view>

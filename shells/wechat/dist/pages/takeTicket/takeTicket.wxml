@@ -1,0 +1,26 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-cells__title">请选择就餐人数</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">就餐人数：</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker
+                        bindchange="handleChange"
+                        value="{{customerNum - 1}}"
+                        range="{{customerAllNumbers}}"
+                        >
+                        <view class="weui-select">{{customerNum}}人</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-btn-area" style="text-align: center;">
+            <button class="weui-btn mini-btn primary-btn" size="mini" type="submit" bindtap="takeNo">取号</button>
+        </view>
+    </view>
+</view>
+<loading hidden="{{!takingTicket}}">取号中...</loading>

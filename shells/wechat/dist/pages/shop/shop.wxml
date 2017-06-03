@@ -1,0 +1,69 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd">
+        <view class="weui-cell shop-header">
+            <view class="weui-cell__hd shop-header-logo" >
+                <image
+                    src="{{shop.entity.entityLogo || '../../img/default-small.png'}}"
+                    background-size="cover"
+                    class="shop-header-logo__img"
+                />
+            </view>
+            <view class="weui-cell__bd">
+                <view class="shop-header-name">{{shop.entity.entityName}}</view>
+                <view class="shop-header-info">电话：{{shop.entity.phone}}</view>
+                <view class="shop-header-info">地址：{{shop.entity.address}}</view>
+            </view>
+        </view>
+
+        <view class="schedule" >
+            <block wx:if="{{shop.seatTypes && shop.seatTypes.length > 0}}">
+                <view class="weui-flex schedule-hd">
+                    <view class="weui-flex__item schedule-hd__col schedule-hd__col--left">桌位类型</view>
+                    <view class="weui-flex__item schedule-hd__col schedule-hd__col--center">等待桌数</view>
+                    <view class="weui-flex__item schedule-hd__col schedule-hd__col--right">预计等待时间</view>
+                </view>
+                <view class="schedule-bd">
+                    <view
+                        class="weui-flex schedule-item"
+                        wx:for="{{shop.seatTypes}}"
+                        wx:for-item="seatType"
+                        wx:key="{{seatType.seatTypeName + shop.entityId}}"
+                    >
+                        <view class="weui-flex__item schedule-item__col schedule-item__col--left">
+                            <text>{{seatType.seatTypeName}}</text>
+                            <text class="small-text">{{seatType.min}}-{{seatType.max}}人</text>
+                        </view>
+                        <view class="weui-flex__item schedule-item__col schedule-item__col--center">
+                            <text class="primary-text">{{seatType.queueLen}}</text>
+                            <text>桌</text>
+                        </view>
+                        <view class="weui-flex__item schedule-item__col schedule-item__col--right">{{seatType.waitingTime}}</view>
+                    </view>
+                </view>
+            </block>
+            <view class="schedule-after">
+
+                <block wx:if="{{ !!queueId }}" >
+                    <button class="weui-btn mini-btn schedule-after__btn" size="mini" type="submit" bindtap="goCheckQueue">
+                        查看取号单
+                    </button>
+                    <view style="text-align: center; color: #AAA; font-size: 26rpx; margin-top: 20rpx;">已经取号，还需等待{{shop.queueState.queueLen}}桌</view>
+                </block>
+                <block wx:else>
+                    <button class="weui-btn mini-btn schedule-after__btn" size="mini" type="submit" wx:if="{{ isEntityRunning }}" bindtap="toTakeNo">取号</button>
+                    <button class="weui-btn mini-btn schedule-after__btn" size="mini" type="default" disabled="disabled" wx:else>请到店取号</button>
+                </block>
+                <!-- <button class="weui-btn mini-btn schedule-after__btn" size="mini" type="default" disabled="disabled" wx:if="{{ shop.queueState.serviceStatus === 2 }}">餐厅暂停取号</button>
+                <button class="weui-btn mini-btn schedule-after__btn" size="mini" type="default" disabled="disabled" wx:if="{{ shop.queueState.serviceStatus === 3 }}">餐厅未开通在线排队</button>
+                <button class="weui-btn mini-btn schedule-after__btn" size="mini" type="submit" wx:if="{{ shop.queueState.serviceStatus === 1 && !queueId }}" bindtap="toTakeNo">取号</button>
+                <block wx:if="{{ !!queueId }}" >
+                    <button class="weui-btn mini-btn schedule-after__btn" size="mini" type="submit" bindtap="goCheckQueue">
+                        查看取号单
+                    </button>
+                    <view style="text-align: center; color: #AAA; font-size: 26rpx; margin-top: 20rpx;">已经取号，还需等待{{shop.queueState.queueLen}}桌</view>
+                </block>
+                 -->
+            </view>
+        </view>
+    </view>
+</view>

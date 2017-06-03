@@ -1,0 +1,74 @@
+
+.shops-list-item {
+  margin-bottom: 8rpx;
+  padding: 24rpx 24rpx;
+  box-sizing: content-box;
+  background-color: #F9F9F9;
+  display: flex;
+}
+.shops-list-item-left {
+  margin-right: 24rpx;
+  width: 128rpx;
+  height: 128rpx;
+  background: #FFF;
+}
+
+.tickets-item-left__image {
+  width: 128rpx;
+  height: 128rpx;
+}
+
+.shops-list-item-center {
+  width: 380rpx;
+  margin-right: 20rpx;
+}
+
+.shops-list-item-center__name {
+  font-size: 32rpx;
+  line-height: 56rpx;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+}
+.shops-list-item-center__detail {
+  font-size: 26rpx;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #aaa;
+}
+
+.shops-list-item-right {
+  width: 140rpx;
+  font-size: 32rpx;
+  overflow: hidden;
+  display: flex;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+  align-items:center;
+  color: #bb2b48;
+  align-content: center;
+}
+.shops-list-item-right__badge {
+  display: block;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  box-sizing: content-box;
+  color: #FFF;
+  padding: 12rpx 16rpx;
+  background-color: #E30327;
+  border-radius: 4rpx;
+}
+.shops-list-item-right__badge--sub {
+  background-color: #C2BFBE;
+}
+
+.shops-list-no-more{
+  background-color: #FFF;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+  color: grey;
+}

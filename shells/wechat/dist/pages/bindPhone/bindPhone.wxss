@@ -1,0 +1,17 @@
+/* pages/history/history.wxss */
+
+.img {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.weui-cell__ft {
+  text-align: left;
+  color: #999999;
+}
+.weui-cell__bd__right {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+}

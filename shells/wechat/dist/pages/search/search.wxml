@@ -1,0 +1,21 @@
+<!--pages/main/main.wxml-->
+<import src="../../templates/shops-list.wxml"/>
+
+<view class="main-header">
+    <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="请输入想找的店铺名称" value="{{keyword}}" auto-focus bindinput="bindKeyWordInput" />
+            <view class="weui-icon-clear" wx:if="{{keyword.length > 0}}" bindtap="clearKeyWordInput">
+                <icon type="clear" size="14"></icon>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="section" wx:if="{{ !!keyword && shops.length < 0}}">
+    <view class="section-title">没有搜索到匹配的餐厅</view>
+</view>
+<view class="section" wx:else>
+    <template is="shops-list" data="{{shops: shops, noMore: noMore, loading: loading}}"/>
+</view>
+
